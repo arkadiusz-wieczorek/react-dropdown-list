@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const OneOption = props => {
+const SingleOption = props => {
 	let classNameValue = "single";
 	if (props.currentValue !== undefined) classNameValue = "single chosen";
 	if (props.incorrectValue) classNameValue = "single incorrect";
@@ -13,4 +13,4 @@ const OneOption = props => {
 	);
 };
 
-export default OneOption;
+export default SingleOption;

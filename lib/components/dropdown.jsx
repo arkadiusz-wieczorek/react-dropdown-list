@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Label from "./helpers/label.jsx";
-import OneOption from "./helpers/one-option.jsx";
+import SingleOption from "./helpers/single-option.jsx";
 import WarningMessage from "./helpers/warning-message.jsx";
 import onClickOutside from "react-onclickoutside";
 
@@ -73,7 +73,7 @@ class Dropdown extends React.Component {
 							})}
 						</ul>
 					: <ul className="container" onClick={this.showList()}>
-							<OneOption
+							<SingleOption
 								currentValue={this.state.currentValue}
 								incorrectValue={this.state.incorrectValue}
 							/>
