@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 const WarningMessage = props => (
 	<span className="warn">
