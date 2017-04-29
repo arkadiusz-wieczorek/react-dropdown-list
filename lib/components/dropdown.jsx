@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import Label from "./helpers/label.jsx";
-import OneElement from "./helpers/one-element.jsx";
+import OneOption from "./helpers/one-option.jsx";
 import WarningMessage from "./helpers/warning-message.jsx";
+import onClickOutside from "react-onclickoutside";
 
 class Dropdown extends React.Component {
 	constructor(props) {
@@ -9,6 +10,7 @@ class Dropdown extends React.Component {
 		this.state = {
 			listVisible: false,
 			currentValue: undefined,
+			incorrectValue: false,
 		};
 	}
 
@@ -22,9 +24,22 @@ class Dropdown extends React.Component {
 		this.setState({
 			listVisible: !this.state.listVisible,
 			currentValue: option,
+			incorrectValue: false,
 		});
 	}
 
+	handleClickOutside() {
+		if (this.state.listVisible && this.state.currentValue === undefined) {
+			this.setState({
+				listVisible: false,
+				incorrectValue: true,
+			});
+		} else {
+			this.setState({
+				listVisible: false,
+			});
+		}
+	}
 	render() {
 		return (
 			<div className="dropdown-list">
@@ -58,12 +73,17 @@ class Dropdown extends React.Component {
 							})}
 						</ul>
 					: <ul className="container" onClick={this.showList()}>
-							<OneElement currentValue={this.state.currentValue} />
+							<OneOption
+								currentValue={this.state.currentValue}
+								incorrectValue={this.state.incorrectValue}
+							/>
 						</ul>}
-				<WarningMessage text={this.props.warningText} />
+				{this.state.incorrectValue && !this.state.listVisible
+					? <WarningMessage text={this.props.warningText} />
+					: null}
 			</div>
 		);
 	}
 }
 
-export default Dropdown;
+export default onClickOutside(Dropdown);
