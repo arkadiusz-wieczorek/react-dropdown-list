@@ -18,6 +18,10 @@ body{
 	-webkit-font-smoothing: auto;
 }
 
+#container{
+	width: 10rem;
+}
+
 .dropdown-list{
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -81,7 +85,7 @@ li.selected{
 	color:red;
 }
 
-li.warn{
+li.incorrect{
 	border-bottom: 2px solid #E0211B;
 }
 
