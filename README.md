@@ -11,4 +11,4 @@ npm install -g browserify watchify
 
 ## Run
 
-Go to `public` directory and run index.html file.
+Go to `public` directory and run `index.html` example file.
