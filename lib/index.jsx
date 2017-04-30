@@ -6,48 +6,27 @@ class Index extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			disabled: false,
-			filledOff: false,
-			active: true,
+			disabledDropdown: false,
+		};
+	}
+	changeValue() {
+		return () => {
+			this.setState({ disabledDropdown: !this.state.disabledDropdown });
 		};
 	}
 	render() {
 		return (
 			<div>
-				{/* <label>
-					<input
-						type="radio"
-						value="disabled"
-						checked={this.state.disabled}
-						onChange={this.handleOptionChange}
-					/>
-					Wyłączone
-				</label>
-				<label>
-					<input
-						type="radio"
-						value="filledOff"
-						checked={this.state.filledOff}
-						onChange={this.handleOptionChange}
-					/>
-					Wyłączone wypełnione
-				</label>
-				<label>
-					<input
-						type="radio"
-						value="active"
-						checked={this.state.active}
-						onChange={this.handleOptionChange}
-					/>
-					Aktywne
-				</label> */}
+				<button onClick={this.changeValue()}>
+					{this.state.disabledDropdown
+						? "Włącz komponent"
+						: "Wyłącz komponent"}
+				</button>
 				<div className="element-container">
 					{React.createElement(Dropdown, {
 						label: "Miesiąc",
 						warningText: "Wybierz miesiąc",
-						disabled: this.state.disabled,
-						filledOff: this.state.filledOff,
-						active: this.state.active,
+						disabled: this.state.disabledDropdown,
 						options: [
 							{ name: "Styczeń", value: "january" },
 							{ name: "Luty", value: "february" },
