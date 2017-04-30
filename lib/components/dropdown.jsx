@@ -1,7 +1,10 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Label from "./helpers/label.jsx";
 import SingleOption from "./helpers/single-option.jsx";
+import List from "./helpers/list.jsx";
 import WarningMessage from "./helpers/warning-message.jsx";
+import DisabledComponent from "./helpers/disabled-component.jsx";
 import onClickOutside from "react-onclickoutside";
 
 class Dropdown extends React.Component {
@@ -30,64 +33,56 @@ class Dropdown extends React.Component {
 
 	handleClickOutside() {
 		if (this.state.listVisible && this.state.currentValue === undefined) {
-			this.setState({
-				listVisible: false,
-				incorrectValue: true,
-			});
-		} else {
-			this.setState({
-				listVisible: false,
-			});
+			this.setState({ incorrectValue: true });
 		}
+		this.setState({ listVisible: false });
 	}
+
 	render() {
 		return (
-			<div className="dropdown-list">
+			<div>
 				<Label
 					name={this.props.label}
 					showList={this.showList()}
 					listVisible={this.state.listVisible}
 					currentValue={this.state.currentValue}
 				/>
+				{!this.props.disabled
+					? <div className="dropdown-list">
 
-				{this.state.listVisible
-					? <ul className="select-container">
-							{this.props.options.map((option, i) => {
-								return (
-									<li
-										className={
-											this.state.currentValue !==
-												undefined &&
-												this.state.currentValue.key === i
-												? "option selected"
-												: "option"
-										}
-										key={i}
-										onClick={this.selectValue.bind(this, {
-											option,
-											key: i,
-										})}
+							{this.state.listVisible
+								? <List
+										options={this.props.options}
+										currentValue={this.state.currentValue}
+										selectValue={this.selectValue.bind(this)}
+									/>
+								: <ul
+										className="select-container"
+										onClick={this.showList()}
 									>
-										{option.name}
-									</li>
-								);
-							})}
-						</ul>
-					: <ul
-							className="select-container"
-							onClick={this.showList()}
-						>
-							<SingleOption
-								currentValue={this.state.currentValue}
-								incorrectValue={this.state.incorrectValue}
-							/>
-						</ul>}
-				{this.state.incorrectValue && !this.state.listVisible
-					? <WarningMessage text={this.props.warningText} />
-					: null}
+										<SingleOption
+											currentValue={this.state.currentValue}
+											incorrectValue={
+												this.state.incorrectValue
+											}
+										/>
+									</ul>}
+							{this.state.incorrectValue && !this.state.listVisible
+								? <WarningMessage text={this.props.warningText} />
+								: null}
+						</div>
+					: <DisabledComponent
+							currentValue={this.state.currentValue}
+						/>}
 			</div>
 		);
 	}
 }
 
 export default onClickOutside(Dropdown);
+
+Dropdown.propTypes = {
+	label: PropTypes.string,
+	warningText: PropTypes.string,
+	options: PropTypes.array,
+};
