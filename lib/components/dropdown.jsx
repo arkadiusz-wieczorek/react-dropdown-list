@@ -19,7 +19,8 @@ class Dropdown extends React.Component {
 
 	showList() {
 		return () => {
-			this.setState({ listVisible: !this.state.listVisible });
+			if (!this.props.disabled)
+				this.setState({ listVisible: !this.state.listVisible });
 		};
 	}
 
