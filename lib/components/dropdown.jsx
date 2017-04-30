@@ -45,12 +45,13 @@ class Dropdown extends React.Component {
 			<div className="dropdown-list">
 				<Label
 					name={this.props.label}
+					showList={this.showList()}
 					listVisible={this.state.listVisible}
 					currentValue={this.state.currentValue}
 				/>
 
 				{this.state.listVisible
-					? <ul className="container">
+					? <ul className="select-container">
 							{this.props.options.map((option, i) => {
 								return (
 									<li
@@ -72,7 +73,10 @@ class Dropdown extends React.Component {
 								);
 							})}
 						</ul>
-					: <ul className="container" onClick={this.showList()}>
+					: <ul
+							className="select-container"
+							onClick={this.showList()}
+						>
 							<SingleOption
 								currentValue={this.state.currentValue}
 								incorrectValue={this.state.incorrectValue}

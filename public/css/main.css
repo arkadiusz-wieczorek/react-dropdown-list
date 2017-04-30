@@ -18,7 +18,7 @@ body{
 	-webkit-font-smoothing: auto;
 }
 
-#container{
+.element-container{
 	width: 10rem;
 }
 
@@ -49,11 +49,10 @@ body{
 }
 
 
-ul.container{
+ul.select-container{
 	padding: 0;
 	max-width: 10rem;
 	list-style-type: none;
-	z-index: 1;
 }
 
 li{
@@ -72,13 +71,13 @@ li.option{
 	animation: fadeIn 400ms;
 }
 
+/*li.single{
+	position: relative;
+	top: .05rem;
+}*/
+
 li.option:first-child{
 	animation: none;
-}
-
-li:hover{
-	border: 1px solid #767676;
-	color:red;
 }
 
 li.selected{
@@ -99,6 +98,11 @@ li.chosen{
 	left: .525rem;
 	transition: all 200ms;
 	z-index: 1;
+	cursor: pointer;
+	overflow: hidden;
+	height: 1rem;
+	display: inline;
+	align-items: flex-start;
 }
 
 .label.active{
@@ -109,5 +113,27 @@ li.chosen{
 	background: #fff;
 	left: .4rem;
 	padding: .125rem;
-	overflow: auto;
+	overflow: hidden;
+	line-height: .75rem;
+}
+
+.dropdown-list:hover .label{
+	color: red;
+}
+
+.dropdown-list:hover .label.active{
+	color: hsl(0, 0%, 50%);
+}
+
+.dropdown-list:hover li{
+	/*border: 1px solid red;*/
+	color: blue;
+}
+
+.dropdown-list:hover li{
+	color: blue;
+}
+
+li.option:hover{
+	color:green;
 }

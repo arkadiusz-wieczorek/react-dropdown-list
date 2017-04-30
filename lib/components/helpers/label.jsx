@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
 const Label = props => (
-	<span
+	<div
+		onClick={props.showList}
 		className={
 			props.currentValue !== undefined || props.listVisible
 				? "label active"
@@ -9,7 +10,7 @@ const Label = props => (
 		}
 	>
 		{props.name}
-	</span>
+	</div>
 );
 
 export default Label;
