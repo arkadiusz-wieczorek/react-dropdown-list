@@ -70,4 +70,4 @@ class SomeTestComponent extends React.Component {
 	}
 }
 
-ReactDOM.render(<SomeTestComponent />, document.querySelector("#container"));
+ReactDOM.render(<SomeTestComponent />, document.querySelector("#app"));
