@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const DisabledComponent = props => {
 	let value_name = null;

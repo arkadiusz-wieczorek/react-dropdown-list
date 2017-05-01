@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Dropdown from "./components/dropdown.jsx";
 
-class Index extends React.Component {
+class SomeTestComponent extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -55,4 +55,4 @@ class Index extends React.Component {
 	}
 }
 
-ReactDOM.render(<Index />, document.querySelector("#container"));
+ReactDOM.render(<SomeTestComponent />, document.querySelector("#container"));
