@@ -40,12 +40,13 @@ class Dropdown extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="container">
 				<Label
 					name={this.props.label}
 					showList={this.showList()}
 					listVisible={this.state.listVisible}
 					currentValue={this.props.value}
+					disabled={this.props.disabled}
 				/>
 				{!this.props.disabled
 					? <div className="dropdown-list">

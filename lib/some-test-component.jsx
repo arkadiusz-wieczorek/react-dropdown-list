@@ -22,11 +22,13 @@ class SomeTestComponent extends React.Component {
 	render() {
 		return (
 			<div>
-				<button onClick={this.turnOffDropdown()}>
-					{this.state.disabledDropdown
-						? "Włącz komponent"
-						: "Wyłącz komponent"}
-				</button>
+				<div className="nav">
+					<button onClick={this.turnOffDropdown()}>
+						{this.state.disabledDropdown
+							? "Włącz komponent"
+							: "Wyłącz komponent"}
+					</button>
+				</div>
 				<div className="element-container">
 					{React.createElement(Dropdown, {
 						label: "Miesiąc",
@@ -39,14 +41,14 @@ class SomeTestComponent extends React.Component {
 							{ name: "Luty", value: "february" },
 							{ name: "Marzec", value: "march" },
 							{ name: "Kwiecień", value: "april" },
-							{ name: "Maj", value: "may" },
-							{ name: "Czerwiec", value: "june" },
-							{ name: "Lipiec", value: "july" },
-							{ name: "Sierpień", value: "august" },
-							{ name: "Wrzesień", value: "september" },
-							{ name: "Październik", value: "october" },
-							{ name: "Listopad", value: "november" },
-							{ name: "Grudzień", value: "december" },
+							// { name: "Maj", value: "may" },
+							// { name: "Czerwiec", value: "june" },
+							// { name: "Lipiec", value: "july" },
+							// { name: "Sierpień", value: "august" },
+							// { name: "Wrzesień", value: "september" },
+							// { name: "Październik", value: "october" },
+							// { name: "Listopad", value: "november" },
+							// { name: "Grudzień", value: "december" },
 						],
 					})}
 				</div>

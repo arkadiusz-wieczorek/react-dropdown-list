@@ -6,7 +6,7 @@ const DisabledComponent = props => {
 		value_name = props.currentValue.option.name;
 	return (
 		<ul className="select-container">
-			<li className="single">{value_name}</li>
+			<li className="single disabled">{value_name}</li>
 		</ul>
 	);
 };
