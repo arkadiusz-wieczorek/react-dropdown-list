@@ -1,5 +1,5 @@
 html{
-	font-size: 1.65em;
+	font-size: 1.5em;
 	color: #333;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -79,6 +79,7 @@ li.option:first-child{
 	border-top: 2px solid #767676;
 	border-top-left-radius: 2px;
 	border-top-right-radius: 2px;
+	animation: fadeIn 400ms;
 }
 
 li.option:last-child{
@@ -95,6 +96,7 @@ li.option{
 	border-radius: 0px;
 	border-left: 2px solid #767676;
 	border-right: 2px solid #767676;
+	padding-left: 0.55rem;
 }
 
 li.selected,
