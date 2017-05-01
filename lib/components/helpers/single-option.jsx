@@ -8,7 +8,8 @@ const SingleOption = props => {
 		<li className={classNameValue}>
 			{props.currentValue !== undefined
 				? props.currentValue.option.name
-				: null}
+				: <div> </div>}
+			<div className="arrow" />
 		</li>
 	);
 };
