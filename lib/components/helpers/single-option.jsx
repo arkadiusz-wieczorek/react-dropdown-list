@@ -6,9 +6,11 @@ const SingleOption = props => {
 	if (props.incorrectValue) classNameValue = "single incorrect";
 	return (
 		<li className={classNameValue}>
-			{props.currentValue !== undefined
-				? props.currentValue.option.name
-				: <div> </div>}
+			<div>
+				{props.currentValue !== undefined
+					? props.currentValue.option.name
+					: null}
+			</div>
 			<div className="arrow" />
 		</li>
 	);

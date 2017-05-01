@@ -24,6 +24,7 @@ class List extends React.Component {
 							})}
 						>
 							{option.name}
+							{i === 0 ? <div className="arrow" /> : null}
 						</li>
 					);
 				})}

@@ -14,7 +14,7 @@
    id="svg3386"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="arrow.svg">
+   sodipodi:docname="arrow-disabled.svg">
   <metadata
      id="metadata3396">
     <rdf:RDF>
@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -43,8 +43,8 @@
      id="namedview3392"
      showgrid="false"
      inkscape:zoom="26.21952"
-     inkscape:cx="-5.4787205"
-     inkscape:cy="19.611292"
+     inkscape:cx="14.430111"
+     inkscape:cy="13.508968"
      inkscape:window-x="0"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -60,7 +60,7 @@
        d="m 115.21575,1018.5418 -43.755198,45.4456 -43.840995,-45.4456 -4.976082,5.1583 46.243241,47.9359 c 0.686354,0.7114 0.723009,0.7155 2.488041,0.7155 1.80243,0 1.801685,0 2.48804,-0.7155 l 46.243243,-47.9359 z"
        id="path3390"
        inkscape:connector-curvature="0"
-       style="fill:#767676;fill-opacity:1;stroke:#767676;stroke-width:10.69672012;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#dddddd;fill-opacity:1;stroke:#dddddd;stroke-width:10.69672012;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        sodipodi:nodetypes="ccccssscc" />
   </g>
 </svg>
