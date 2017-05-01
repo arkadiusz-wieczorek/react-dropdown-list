@@ -8,11 +8,20 @@ class SomeTestComponent extends React.Component {
 		this.state = {
 			disabledDropdown: false,
 			valueFromDropdown: undefined,
+			incorrectValue: false,
 		};
 	}
 	turnOffDropdown() {
 		return () => {
 			this.setState({ disabledDropdown: !this.state.disabledDropdown });
+		};
+	}
+	resetDropodown() {
+		return () => {
+			this.setState({
+				valueFromDropdown: undefined,
+				incorrectValue: false,
+			});
 		};
 	}
 	handleChange(option) {
@@ -28,6 +37,9 @@ class SomeTestComponent extends React.Component {
 							? "Włącz komponent"
 							: "Wyłącz komponent"}
 					</button>
+					<button onClick={this.resetDropodown()}>
+						Zresetuj wybraną opcję
+					</button>
 				</div>
 				<div className="element-container">
 					{React.createElement(Dropdown, {
@@ -35,20 +47,21 @@ class SomeTestComponent extends React.Component {
 						warningText: "Wybierz miesiąc",
 						disabled: this.state.disabledDropdown,
 						value: this.state.valueFromDropdown,
+						incorrectValue: this.state.incorrectValue,
 						selectValue: this.handleChange.bind(this),
 						options: [
 							{ name: "Styczeń", value: "january" },
 							{ name: "Luty", value: "february" },
 							{ name: "Marzec", value: "march" },
 							{ name: "Kwiecień", value: "april" },
-							// { name: "Maj", value: "may" },
-							// { name: "Czerwiec", value: "june" },
-							// { name: "Lipiec", value: "july" },
-							// { name: "Sierpień", value: "august" },
-							// { name: "Wrzesień", value: "september" },
-							// { name: "Październik", value: "october" },
-							// { name: "Listopad", value: "november" },
-							// { name: "Grudzień", value: "december" },
+							{ name: "Maj", value: "may" },
+							{ name: "Czerwiec", value: "june" },
+							{ name: "Lipiec", value: "july" },
+							{ name: "Sierpień", value: "august" },
+							{ name: "Wrzesień", value: "september" },
+							{ name: "Październik", value: "october" },
+							{ name: "Listopad", value: "november" },
+							{ name: "Grudzień", value: "december" },
 						],
 					})}
 				</div>

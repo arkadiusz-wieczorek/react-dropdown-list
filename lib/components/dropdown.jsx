@@ -12,8 +12,14 @@ class Dropdown extends React.Component {
 		super(props);
 		this.state = {
 			listVisible: false,
-			incorrectValue: false,
+			incorrectValue: this.props.incorrectValue,
 		};
+	}
+
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.incorrectValue !== this.state.incorrectValue) {
+			this.setState({ incorrectValue: nextProps.incorrectValue });
+		}
 	}
 
 	showList() {
