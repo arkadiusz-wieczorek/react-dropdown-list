@@ -32,7 +32,7 @@ class Dropdown extends React.Component {
 	}
 
 	handleClickOutside() {
-		if (this.state.listVisible && this.props.currentValue === undefined) {
+		if (this.state.listVisible && this.props.value === undefined) {
 			this.setState({ incorrectValue: true });
 		}
 		this.setState({ listVisible: false });
@@ -45,7 +45,7 @@ class Dropdown extends React.Component {
 					name={this.props.label}
 					showList={this.showList()}
 					listVisible={this.state.listVisible}
-					currentValue={this.props.currentValue}
+					currentValue={this.props.value}
 				/>
 				{!this.props.disabled
 					? <div className="dropdown-list">
@@ -53,7 +53,7 @@ class Dropdown extends React.Component {
 							{this.state.listVisible
 								? <List
 										options={this.props.options}
-										currentValue={this.props.currentValue}
+										currentValue={this.props.value}
 										selectValue={this.selectValue.bind(this)}
 									/>
 								: <ul
@@ -61,7 +61,7 @@ class Dropdown extends React.Component {
 										onClick={this.showList()}
 									>
 										<SingleOption
-											currentValue={this.props.currentValue}
+											currentValue={this.props.value}
 											incorrectValue={
 												this.state.incorrectValue
 											}
@@ -71,9 +71,7 @@ class Dropdown extends React.Component {
 								? <WarningMessage text={this.props.warningText} />
 								: null}
 						</div>
-					: <DisabledComponent
-							currentValue={this.props.currentValue}
-						/>}
+					: <DisabledComponent currentValue={this.props.value} />}
 			</div>
 		);
 	}

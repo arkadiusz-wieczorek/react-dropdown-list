@@ -7,7 +7,7 @@ class SomeTestComponent extends React.Component {
 		super(props);
 		this.state = {
 			disabledDropdown: false,
-			currentValue: undefined,
+			valueFromDropdown: undefined,
 		};
 	}
 	turnOffDropdown() {
@@ -16,7 +16,7 @@ class SomeTestComponent extends React.Component {
 		};
 	}
 	handleChange(option) {
-		this.setState({ currentValue: option });
+		this.setState({ valueFromDropdown: option });
 	}
 
 	render() {
@@ -32,7 +32,7 @@ class SomeTestComponent extends React.Component {
 						label: "Miesiąc",
 						warningText: "Wybierz miesiąc",
 						disabled: this.state.disabledDropdown,
-						currentValue: this.state.currentValue,
+						value: this.state.valueFromDropdown,
 						selectValue: this.handleChange.bind(this),
 						options: [
 							{ name: "Styczeń", value: "january" },
