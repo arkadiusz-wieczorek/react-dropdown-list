@@ -22,7 +22,7 @@ body{
 	width: 10rem;
 }
 
-.dropdown-list{
+.dropdown-list, .label{
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
