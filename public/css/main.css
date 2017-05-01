@@ -70,19 +70,34 @@ li{
     color: #7D7D7D;
     display: flex;
     align-items: center;
-    /*! line-height: 2rem; */
     height: 2rem;
     background: #fff;
     text-indent: calc( -1px / 2 );
 }
 
-li.option{
-	animation: fadeIn 400ms;
+li.option:first-child{
+	border-top: 2px solid #767676;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
 }
 
-li.option:first-child{
-	animation: none;
+li.option:last-child{
+	border-bottom: 2px solid #767676;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	padding-bottom: 1.5rem;
+	padding-top: 1rem;
 }
+
+li.option{
+	animation: fadeIn 400ms;
+	border-bottom: 0px;
+	border-top: 0px;
+	border-radius: 0px;
+	border-left: 2px solid #767676;
+	border-right: 2px solid #767676;
+}
+
 
 li.selected,
 li.option:hover{
