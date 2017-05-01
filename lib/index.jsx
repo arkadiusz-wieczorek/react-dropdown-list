@@ -7,17 +7,22 @@ class Index extends React.Component {
 		super(props);
 		this.state = {
 			disabledDropdown: false,
+			currentValue: undefined,
 		};
 	}
-	changeValue() {
+	turnOffDropdown() {
 		return () => {
 			this.setState({ disabledDropdown: !this.state.disabledDropdown });
 		};
 	}
+	handleChange(option) {
+		this.setState({ currentValue: option });
+	}
+
 	render() {
 		return (
 			<div>
-				<button onClick={this.changeValue()}>
+				<button onClick={this.turnOffDropdown()}>
 					{this.state.disabledDropdown
 						? "Włącz komponent"
 						: "Wyłącz komponent"}
@@ -27,6 +32,8 @@ class Index extends React.Component {
 						label: "Miesiąc",
 						warningText: "Wybierz miesiąc",
 						disabled: this.state.disabledDropdown,
+						currentValue: this.state.currentValue,
+						selectValue: this.handleChange.bind(this),
 						options: [
 							{ name: "Styczeń", value: "january" },
 							{ name: "Luty", value: "february" },
@@ -43,7 +50,6 @@ class Index extends React.Component {
 						],
 					})}
 				</div>
-
 			</div>
 		);
 	}
