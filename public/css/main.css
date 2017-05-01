@@ -38,10 +38,6 @@ body{
 	user-select: none;
 }
 
-@keyframes fadeIn {
-	0% { opacity:0; }
-	100% { opacity:1; }
-}
 @-moz-keyframes fadeIn {
 	0% { opacity:0; }
 	100% { opacity:1; }
@@ -54,6 +50,10 @@ body{
 	0% { opacity:0; }
 	100% { opacity:1; }
 }
+@keyframes fadeIn {
+	0% { opacity:0; }
+	100% { opacity:1; }
+}
 
 
 ul.select-container{
@@ -63,16 +63,16 @@ ul.select-container{
 }
 
 li{
-    padding: 0.25rem 0.6rem;
-    border: 1px solid #DDD;
-    border-radius: 2px;
-    cursor: pointer;
-    color: #7D7D7D;
-    display: flex;
-    align-items: center;
-    height: 2rem;
-    background: #fff;
-    text-indent: calc( -1px / 2 );
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.25rem 0.6rem;
+	border: 1px solid #DDD;
+	border-radius: 2px;
+	cursor: pointer;
+	height: 2rem;
+	background: #fff;
+	color: #7D7D7D;
 }
 
 li.option:first-child{
@@ -91,13 +91,11 @@ li.option:last-child{
 
 li.option{
 	animation: fadeIn 400ms;
-	border-bottom: 0px;
-	border-top: 0px;
+	border: 0px;
 	border-radius: 0px;
 	border-left: 2px solid #767676;
 	border-right: 2px solid #767676;
 }
-
 
 li.selected,
 li.option:hover{
@@ -119,8 +117,7 @@ li.single:hover,
 li.chosen:hover,
 .label:hover + .dropdown-list .single{
 	border: 2px solid #767676;
-	text-indent: -1.5px;
-	/*padding-bottom: calc( 0.25rem + 1px);*/
+	text-indent: -1px;
 }
 
 li.single.chosen:hover,
@@ -130,15 +127,8 @@ li.single.chosen:hover,
 
 li.single.disabled:hover,
 li.chosen.disabled:hover{
-	padding-top: 0.25rem;
-	padding-bottom: 0.25rem;
 	border: 1px solid #DDD;
-	text-indent: -0.5px;
-}
-
-li{
-	display: flex;
-	justify-content: space-between;
+	text-indent: 0px !important;
 }
 
 .arrow{
@@ -160,28 +150,27 @@ li.single.disabled:hover > .arrow{
 
 
 .label{
+	display: inline;
 	position: relative;
 	top: 1.45rem;
 	left: .625rem;
+	overflow: hidden;
 	transition: all 200ms;
 	z-index: 1;
 	cursor: pointer;
-	overflow: hidden;
 	height: 1rem;
-	display: inline;
 	color: #7D7D7D;
 }
 
 .label.active{
-	position: relative;
 	top: 0.38rem;
-	font-size: 0.583333333rem;
-	background: #fff;
 	left: .35rem;
 	padding-left: .25rem;
 	padding-right: .3rem;
 	overflow: hidden;
 	line-height: .75rem;
+	font-size: 0.583333333rem;
+	background: #fff;
 }
 
 .label.active.disabled{
@@ -196,9 +185,13 @@ li.single.disabled:hover > .arrow{
 	color:#ddd !important;
 }
 
+.single.disabled div{
+	margin-bottom: 1px;
+}
+
 span.warn{
-	color: #E0211B;
-	font-size: 0.5rem;
 	position: relative;
 	top: -0.075rem;
+	color: #E0211B;
+	font-size: 0.5rem;
 }
