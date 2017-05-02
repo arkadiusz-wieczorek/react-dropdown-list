@@ -38,7 +38,7 @@ class SomeTestComponent extends React.Component {
 							: "Wyłącz komponent"}
 					</button>
 					<button onClick={this.resetDropodown()}>
-						Zresetuj wybraną opcję
+						Resetuj komponent
 					</button>
 				</div>
 				<div className="element-container">
