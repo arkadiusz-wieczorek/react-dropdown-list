@@ -5,14 +5,16 @@ const SingleOption = props => {
 	if (props.currentValue !== undefined) classNameValue = "single chosen";
 	if (props.incorrectValue) classNameValue = "single incorrect";
 	return (
-		<li className={classNameValue}>
-			<div>
-				{props.currentValue !== undefined
-					? props.currentValue.option.name
-					: null}
-			</div>
-			<div className="arrow" />
-		</li>
+		<ul className={props.className} onClick={props.showList}>
+			<li className={classNameValue}>
+				<div>
+					{props.currentValue !== undefined
+						? props.currentValue.option.name
+						: null}
+				</div>
+				<div className="arrow" />
+			</li>
+		</ul>
 	);
 };
 

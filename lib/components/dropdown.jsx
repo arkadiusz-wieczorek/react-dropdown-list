@@ -56,24 +56,18 @@ class Dropdown extends React.Component {
 				/>
 				{!this.props.disabled
 					? <div className="dropdown-list">
-
 							{this.state.listVisible
 								? <List
 										options={this.props.options}
 										currentValue={this.props.value}
 										selectValue={this.selectValue.bind(this)}
 									/>
-								: <ul
+								: <SingleOption
+										currentValue={this.props.value}
 										className="select-container"
-										onClick={this.showList()}
-									>
-										<SingleOption
-											currentValue={this.props.value}
-											incorrectValue={
-												this.state.incorrectValue
-											}
-										/>
-									</ul>}
+										showList={this.showList()}
+										incorrectValue={this.state.incorrectValue}
+									/>}
 							{this.state.incorrectValue && !this.state.listVisible
 								? <WarningMessage text={this.props.warningText} />
 								: null}
