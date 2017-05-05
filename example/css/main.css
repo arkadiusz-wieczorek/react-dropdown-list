@@ -32,7 +32,7 @@ body{
 	margin-bottom: 1rem;
 }
 
-.dropdown-list, .label{
+.dropdown-list, .label, li{
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
