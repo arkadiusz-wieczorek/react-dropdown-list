@@ -5,7 +5,7 @@ const SingleOption = props => {
 	if (props.currentValue !== undefined) classNameValue = "single chosen";
 	if (props.incorrectValue) classNameValue = "single incorrect";
 	return (
-		<ul className={props.className} onClick={props.showList}>
+		<ul className="select-container" onClick={props.showList}>
 			<li className={classNameValue}>
 				<div>
 					{props.currentValue !== undefined

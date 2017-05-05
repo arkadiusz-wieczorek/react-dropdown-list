@@ -64,9 +64,8 @@ class Dropdown extends React.Component {
 									/>
 								: <SingleOption
 										currentValue={this.props.value}
-										className="select-container"
-										showList={this.showList()}
 										incorrectValue={this.state.incorrectValue}
+										showList={this.showList()}
 									/>}
 							{this.state.incorrectValue && !this.state.listVisible
 								? <WarningMessage text={this.props.warningText} />
