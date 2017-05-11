@@ -5,8 +5,9 @@
     "main": "./lib/components/dropdown.jsx",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "browserify ./lib/some-test-component.jsx -o ./example/js/bundle.js -t [ babelify --presets [ es2015 react ] ] --verbose",
+        "build-dev": "browserify ./lib/some-test-component.jsx -o ./example/js/bundle.js -t [ babelify --presets [ es2015 react ] ] --verbose",
         "watch": "watchify ./lib/some-test-component.jsx -o ./example/js/bundle.js -t [ babelify --presets [ es2015 react ] ] --verbose",
+        "build": "browserify ./lib/some-test-component.jsx -o ./example/js/bundle.js -t [ babelify --presets [ es2015 react ] ]  -g [ envify --NODE_ENV production ] -g uglifyify -p bundle-collapser/plugin --compress --mangle",
         "start": "cd ./example && python -m SimpleHTTPServer 8888"
     },
     "author": {
@@ -26,7 +27,10 @@
         "babel-preset-react": "^6.24.1",
         "babelify": "^7.3.0",
         "browserify": "^14.3.0",
+        "bundle-collapser": "^1.2.1",
+        "envify": "^4.0.0",
         "reactify": "^1.1.1",
+        "uglifyify": "^3.0.4",
         "watchify": "^3.9.0"
     }
 }
